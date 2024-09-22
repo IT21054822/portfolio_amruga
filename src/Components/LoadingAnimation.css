@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+
+.loading-container {
+  font-family: "Michroma", sans-serif;
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.loading-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, #346181, #020271);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  color: #191654;
+}
+
+.name-container {
+  height: 110px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+.logo-name {
+    background: linear-gradient(270deg, #DF8908 50%, #B415FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  font-size: 24px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bolder;
+  line-height: 1.8;
+}
+.name-container hr{
+    width: 20vw;
+    background: linear-gradient(270deg, #DF8908 50%, #B415FF 100%);
+    margin-top: 20px;
+    
+}

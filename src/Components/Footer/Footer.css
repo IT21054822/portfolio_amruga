@@ -58,3 +58,37 @@
     transform: scale(1.1);
     transition: 0.3s;
 }
+.logo-f{
+    height: 60px;
+    padding-bottom:10px ;
+}
+/* For screens between 768px and 551px */
+@media (max-width: 768px) and (min-width: 551px) {
+    .footer {
+        margin: 50px 70px;
+    }
+    .footer-top {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .footer-bottom {
+        flex-direction: column-reverse;
+        margin-bottom: 50px;
+    }
+}
+
+/* For screens 550px and below */
+@media (max-width: 550px) {
+    .footer {
+        margin: 30px 20px;
+    }
+    .footer-top {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .footer-bottom {
+        flex-direction: column-reverse;
+        margin-bottom: 30px;
+        gap: 20px;
+    }
+}

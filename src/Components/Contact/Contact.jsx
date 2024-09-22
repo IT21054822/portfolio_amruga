@@ -1,13 +1,51 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import './Contact.css'
 import theme_pattern from '../../assets/theme_pattern.svg'
 import mail_icon from '../../assets/mail_icon.svg'
 import location_icon from '../../assets/location_icon.svg'
 import call_icon from '../../assets/call_icon.svg'
+import { Alert, Snackbar } from '@mui/material'
 
 const Contact = () => {
+    const [openSnackbar, setOpenSnackbar] = useState(false);
+    const formRef = useRef(null);
+
+    const handleCloseSnackbar = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpenSnackbar(false);
+    };
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+    
+        formData.append("access_key", "c2f7edb9-a285-4376-81e5-4eed475521ce");
+    
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+    
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: json
+        }).then((res) => res.json());
+    
+        if (res.success) {
+            console.log("Success", res);
+            setOpenSnackbar(true);
+            // Reset form fields
+            if (formRef.current) {
+                formRef.current.reset();
+            }
+        }
+      };
+    
   return (
-    <div className='contact'>
+    <div id='contact' className='contact'>
         <div className="contact-title">
             <h1>Get in Touch</h1>
             <img src={theme_pattern} alt="" />
@@ -31,8 +69,7 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-            <form className="contact-right">
-        <label htmlFor="">Your Name</label>
+            <form ref={formRef} onSubmit={onSubmit} className="contact-right">        <label htmlFor="">Your Name</label>
         <input type="text" placeholder='Enter Your Name' name='name'/>
         <label htmlFor="">Your E-Mail</label>
         <input type="email" placeholder='Enter Your Email' name='email' />
@@ -44,6 +81,17 @@ const Contact = () => {
 
             </form>
         </div>
+        <Snackbar
+        sx={{background:'transparent', color: 'white'}}
+                open={openSnackbar}
+                autoHideDuration={5000}
+                onClose={handleCloseSnackbar}
+                anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+            >
+                <Alert  onClose={handleCloseSnackbar} severity="success" sx={{ width: '100%', background: 'linear-gradient(264deg, #DF8908 -5.09%, #B415FF 100%)', color:'white' }}>
+                    Message sent successfully!
+                </Alert>
+            </Snackbar>
       
     </div>
   )

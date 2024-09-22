@@ -1,4 +1,4 @@
-.mywork{
+.mywork {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,43 +6,111 @@
     gap: 80px;
     margin: 80px 170px;
 }
-.mywork-title{
+
+.mywork-title {
     position: relative;
 }
-.mywork-title h1{
+
+.mywork-title h1 {
     padding: 0 30px;
     font-size: 80px;
     font-weight: 600;
 }
-.mywork-title img{
+
+.mywork-title img {
     position: absolute;
     bottom: 0;
     right: 0;
     z-index: -1;
 }
-.mywork-container{
+
+.mywork-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: start;
+    justify-content: center;
 }
-.mywork-container img{
-    box-sizing: border-box;
-    width: 419px;
-    height: 280px;
-    transition: 0.3s;
+
+.work-item {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.work-image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.work-image-container img {
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.work-image-container:hover .overlay {
+    opacity: 1;
+}
+
+.work-image-container:hover img {
+    filter: blur(2px);
+}
+
+.show-description-btn {
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 10px 20px;
     cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-family: 'Outfit' ;
+    color: white;
 }
-.mywork-container img:hover{
+
+.show-description-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
     transform: scale(1.1);
-    border: 1px solid #ff00ff;
-    border-radius: 10px;
-    transition: 0.3s;
 }
-.mywork-showmore{
+
+.work-description {
+    background-color: transparent;
+    color: white;
+    padding: 20px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid white;
+    border-radius: 8px;
+}
+
+.work-item.expanded .work-description {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 10px;
+}
+
+.mywork-showmore {
     display: flex;
     gap: 15px;
     border-radius: 50px;
-    border: 2px solid white ;
+    border: 2px solid white;
     padding: 30px 60px;
     font-size: 22px;
     font-weight: 500;
@@ -50,13 +118,74 @@
     transition: 0.6s;
     cursor: pointer;
 }
-.mywork-showmore:hover{
+
+.mywork-showmore:hover {
     background: linear-gradient(270deg, #DF8908 50%, #B415FF 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     border: 2px solid #ff00ff;
     transition: 0.6s;
-
     gap: 30px;
+}
+.descriptionText{
+    font-style: italic;
+    font-weight: 200;
+    line-height: 21px;
+}
+.work-image-style{
+    border-radius: 12px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+/* For screens between 768px and 551px */
+@media (max-width: 768px) and (min-width: 551px) {
+    .mywork {
+        gap: 50px;
+        margin: 50px 70px;
+        align-items: start;
+    }
+    .mywork-title h1 {
+        font-size: 50px;
+        padding: 0;
+        font-weight: 600;
+    }
+    .mywork-title img {
+        width: 130px;
+        margin-right: -20px;
+    }
+    .mywork-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .mywork-showmore {
+        padding: 20px 40px;
+        font-size: 18px;
+        margin: 50px auto;
+    }
+}
+
+/* For screens 550px and below */
+@media (max-width: 550px) {
+    .mywork {
+        gap: 30px;
+        margin: 30px 20px;
+        align-items: start;
+    }
+    .mywork-title h1 {
+        font-size: 40px;
+        font-weight: 600;
+        padding: 0;
+    }
+    .mywork-title img {
+        width: 100px;
+        margin-right: 90px;
+    }
+    .mywork-container {
+        grid-template-columns: 1fr;
+    }
+    .mywork-showmore {
+        padding: 15px 30px;
+        font-size: 16px;
+        margin: 30px auto;
+    }
 }
