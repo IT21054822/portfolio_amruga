@@ -11,19 +11,14 @@ import LoadingAnimation from './Components/LoadingAnimation';
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    // Simulate loading time (you can replace this with actual loading logic)
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3500); // 3 seconds loading time
-
-    return () => clearTimeout(timer);
-  }, []);
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
 
   return (
     <>
       {isLoading ? (
-        <LoadingAnimation />
+        <LoadingAnimation onComplete={handleLoadingComplete} />
       ) : (
         <div>
           <Navbar />

@@ -9,7 +9,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 }
 
 .loading-page {
@@ -21,7 +24,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 3rem;
   align-items: center;
   justify-content: center;
   color: #191654;
@@ -38,10 +41,10 @@
 }
 
 .logo-name {
-    background: linear-gradient(270deg, #DF8908 50%, #B415FF 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: linear-gradient(270deg, #DF8908 50%, #B415FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 24px;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -49,9 +52,98 @@
   font-weight: bolder;
   line-height: 1.8;
 }
+
 .name-container hr{
-    width: 20vw;
-    background: linear-gradient(270deg, #DF8908 50%, #B415FF 100%);
-    margin-top: 20px;
-    
+  width: 20vw;
+  background: linear-gradient(270deg, #DF8908 50%, #B415FF 100%);
+  margin-top: 20px;
+}
+
+/* Progress Loader Styles */
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 80%;
+  max-width: 400px;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #DF8908, #B415FF);
+  border-radius: 2px;
+  position: relative;
+  transition: width 0.1s ease-out;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6));
+  border-radius: 2px;
+}
+
+.percentage-display {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(270deg, #DF8908 50%, #B415FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  text-align: center;
+  min-width: 120px;
+}
+
+.loading-text {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo-name {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  
+  .percentage-display {
+    font-size: 2rem;
+  }
+  
+  .progress-container {
+    max-width: 300px;
+  }
+  
+  .loading-text {
+    font-size: 0.8rem;
+  }
 }
