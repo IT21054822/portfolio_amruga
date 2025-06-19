@@ -236,3 +236,62 @@
         width: 100%;
     }
 }
+
+/* Form Validation Styles */
+.contact-right input.error,
+.contact-right textarea.error {
+    border-color: #ff4444;
+    border-width: 2px;
+    box-shadow: 0 0 5px rgba(255, 68, 68, 0.3);
+}
+
+.contact-right input.error:focus,
+.contact-right textarea.error:focus {
+    outline: none;
+    border-color: #ff4444;
+    box-shadow: 0 0 8px rgba(255, 68, 68, 0.5);
+}
+
+.error-message {
+    color: #ff4444;
+    font-size: 14px;
+    margin-top: -25px;
+    margin-bottom: 15px;
+    display: block;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.contact-right input:focus,
+.contact-right textarea:focus {
+    outline: none;
+    border-color: #DF8908;
+    box-shadow: 0 0 5px rgba(223, 137, 8, 0.3);
+}
+
+.contact-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.contact-submit:disabled:hover {
+    transform: none;
+}
+
+/* Responsive validation styles */
+@media (max-width: 768px) {
+    .error-message {
+        font-size: 12px;
+        margin-top: -20px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 550px) {
+    .error-message {
+        font-size: 11px;
+        margin-top: -15px;
+        margin-bottom: 8px;
+    }
+}
