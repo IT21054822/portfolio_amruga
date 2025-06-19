@@ -7,6 +7,7 @@ import MyWork from './Components/MyWork/MyWork';
 import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
 import LoadingAnimation from './Components/LoadingAnimation';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -14,9 +15,8 @@ const App = () => {
   const handleLoadingComplete = () => {
     setIsLoading(false);
   };
-
   return (
-    <>
+    <ThemeProvider>
       {isLoading ? (
         <LoadingAnimation onComplete={handleLoadingComplete} />
       ) : (
@@ -30,7 +30,7 @@ const App = () => {
           <Footer />
         </div>
       )}
-    </>
+    </ThemeProvider>
   );
 };
 
