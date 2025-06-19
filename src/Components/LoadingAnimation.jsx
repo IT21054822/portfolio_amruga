@@ -43,7 +43,7 @@ const LoadingAnimation = () => {
       <div className="loading-page">
         <div className="name-container">
           <div className="logo-name" ref={logoNameRef}>
-            Rugashan's<br/>Portfolio
+            Rugash's<br/>Portfolio
           </div>
           {/* <hr ref={logohrRef} /> */}
         </div>
