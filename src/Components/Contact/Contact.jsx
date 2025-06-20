@@ -179,7 +179,7 @@ const Contact = () => {
                         <p>Colombo, Western Province, SriLanka</p>
                     </div>
                 </div>
-            </div>            <form netlify ref={formRef} onSubmit={onSubmit} className="contact-right">
+            </div>            <form name="contact" netlify ref={formRef} onSubmit={onSubmit} className="contact-right">
                 <label htmlFor="name">Your Name</label>
                 <input 
                     type="text" 
