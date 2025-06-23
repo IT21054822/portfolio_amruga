@@ -34,7 +34,7 @@ const Navbar = () => {
           <div className="navbar-right"> <div className="xyz"><ThemeSelector className='themeSelector theme-selector-inline' /></div>
             
             
-            <div className="nav-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>Connect With Me </AnchorLink></div>
+            <div className="nav-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>Contact Me </AnchorLink></div>
           </div>
       </div>
       <div className="theme-selector-below">

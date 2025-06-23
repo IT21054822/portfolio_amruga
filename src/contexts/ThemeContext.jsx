@@ -14,41 +14,35 @@ export const themes = {
   default: {
     name: 'Ocean Blue',
     gradient: 'linear-gradient(to right, #346181, #020271)',
-    icon: '🌊'
-  },
-  sunset: {
+    icon: '🌊'  },  sunset: {
     name: 'Sunset Orange',
-    gradient: 'linear-gradient(to right, #ff7e5f, #feb47b)',
+    gradient: 'linear-gradient(to right, #943218, #8a5c2e)',
     icon: '🌅'
-  },
-  forest: {
+  },  forest: {
     name: 'Forest Green',
-    gradient: 'linear-gradient(to right, #134e5e, #71b280)',
+    gradient: 'linear-gradient(to right, #0d3a45, #4a7c5a)',
     icon: '🌲'
-  },
-  purple: {
+  },  purple: {
     name: 'Purple Dream',
-    gradient: 'linear-gradient(to right, #667eea, #764ba2)',
+    gradient: 'linear-gradient(to right, #4a5bb8, #573d7a)',
     icon: '💜'
   },
   cosmic: {
     name: 'Cosmic Dark',
     gradient: 'linear-gradient(to right, #2c3e50, #4a00e0)',
     icon: '🌌'
-  },
-  fire: {
+  },  fire: {
     name: 'Fire Red',
-    gradient: 'linear-gradient(to right, #e65c00, #F9D423)',
+    gradient: 'linear-gradient(to right, #963700, #a18615)',
     icon: '🔥'
-  },
-  aurora: {
+  },  aurora: {
     name: 'Aurora',
-    gradient: 'linear-gradient(to right, #00c6ff, #0072ff)',
+    gradient: 'linear-gradient(to right, #007399, #003d66)',
     icon: '✨'
   },
   mint: {
     name: 'Fresh Mint',
-    gradient: 'linear-gradient(to right, #00b09b, #96c93d)',
+    gradient: 'linear-gradient(to right, #01665a, #435b1a)',
     icon: '🍃'
   }
 };
