@@ -60,6 +60,13 @@ line-height: 40px;
     align-items: center;
     gap: 4px;
     justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.hero-resume.downloading {
+    opacity: 0.8;
+    cursor: wait;
+    background-color: rgba(180, 21, 255, 0.1);
 }
 
 .hero-connect:hover {
