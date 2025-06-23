@@ -35,9 +35,186 @@
 }
 .services-container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 40px;
     margin-bottom: 80px;
+}
+
+/* Experience Card Styles */
+.experience-card {
+    background: linear-gradient(135deg, rgba(63, 0, 40, 0.1), rgba(88, 35, 0, 0.1));
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.4s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    border: 2px solid #ff00ff;
+    background: linear-gradient(135deg, rgba(63, 0, 40, 0.2), rgba(88, 35, 0, 0.2));
+    box-shadow: 0 15px 35px rgba(255, 0, 255, 0.2);
+}
+
+.experience-header {
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+}
+
+.position-title {
+    font-size: 28px !important;
+    font-weight: 700;
+    background: linear-gradient(270deg, #DF8908 50%, #B415FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.at-symbol {
+    font-size: 24px;
+    font-weight: 800;
+    color: #DF8908;
+    background: none;
+    -webkit-text-fill-color: #DF8908;
+}
+
+.company-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.company-name {
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.link-icon {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    filter: brightness(0) invert(1);
+}
+
+.company-link {
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    padding: 2px 4px;
+}
+
+.company-link:hover {
+    background: linear-gradient(45deg, rgba(223, 137, 8, 0.1), rgba(180, 21, 255, 0.1));
+    transform: translateY(-1px);
+}
+
+.company-link:hover .company-name {
+    background: linear-gradient(270deg, #DF8908 50%, #B415FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.company-link:hover .link-icon {
+    opacity: 1;
+    transform: translateX(2px);
+    filter: brightness(0) saturate(100%) invert(63%) sepia(91%) saturate(2794%) hue-rotate(25deg) brightness(104%) contrast(97%);
+}
+
+.experience-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.duration {
+    font-size: 16px;
+    color: #d4d4d4;
+    font-weight: 500;
+}
+
+.type-badge {
+    background: linear-gradient(45deg, #DF8908, #B415FF);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.experience-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.responsibilities-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.responsibility-item {
+    font-size: 16px;
+    color: #d4d4d4;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.responsibility-item::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #DF8908;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.technologies-section h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-tag {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+    background: linear-gradient(45deg, #DF8908, #B415FF);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(223, 137, 8, 0.3);
 }
 .services-format h3{
     font-size: 28px;
@@ -85,38 +262,40 @@
     }
     
     .services-container {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 30px;
     }
     
-    .services-format {
-        padding: 30px;
+    .experience-card {
+        padding: 25px;
+    }
+      .position-title {
+        font-size: 24px !important;
     }
     
-    .services-format h3 {
-        font-size: 24px;
-    }
-    
-    .services-format h2 {
-        font-size: 32px;
-    }
-    
-    .services-format p {
+    .at-symbol {
         font-size: 20px;
-        line-height: 36px;
-        max-width: 100%;
     }
     
-    .services-readmore {
-        gap: 15px;
+    .company-name {
+        font-size: 18px;
+    }
+    
+    .responsibility-item {
+        font-size: 15px;
+    }
+    
+    .tech-tag {
+        font-size: 13px;
+        padding: 5px 10px;
     }
 }
 /* For screens between 768px and 551px */
 @media (max-width: 768px) and (min-width: 551px) {
     .services {
         align-items: start;
-        gap: 70px;
-        margin: 20px 70px;
+        gap: 50px;
+        margin: 20px 40px;
     }
     .services-title h1 {
         font-size: 50px;
@@ -126,24 +305,34 @@
         width: 130px;
         margin-right: -20px;
     }
-    .services-format {
-        gap: 20px;
-        padding: 32px;
+    .experience-card {
+        padding: 20px;
+    }    .position-title {
+        font-size: 22px !important;
     }
-    .services-format h2 {
-        font-size: 28px;
-    }
-    .services-format p {
+    
+    .at-symbol {
         font-size: 18px;
-        line-height: 32px;
-        max-width: 300px;
     }
-    .services-readmore img {
-        width: 20px;
+    .company-name {
+        font-size: 16px;
+    }
+    .company-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .responsibility-item {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .tech-tag {
+        font-size: 12px;
+        padding: 4px 8px;
     }
     .services-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
+        grid-template-columns: 1fr;
+        gap: 25px;
     }
 }
 
@@ -151,31 +340,68 @@
 @media (max-width: 550px) {
     .services {
         align-items: start;
-        gap: 40px;
-        margin: 20px 30px;
+        gap: 30px;
+        margin: 20px 20px;
     }
     .services-title h1 {
-        font-size: 40px;
+        font-size: 36px;
         padding: 0;
     }
     .services-title img {
-        width: 100px;
-        margin-right: -10px;
+        width: 80px;
+        margin-right: -5px;
     }
-    .services-format {
-        gap: 15px;
-        padding: 24px;
+    .experience-card {
+        padding: 18px;
+    }    .position-title {
+        font-size: 20px !important;
+        margin-bottom: 8px;
     }
-    .services-format h2 {
-        font-size: 24px;
-    }
-    .services-format p {
+    
+    .at-symbol {
         font-size: 16px;
-        line-height: 28px;
-        max-width: 100%;
     }
-    .services-readmore img {
-        width: 18px;
+    
+    .link-icon {
+        width: 14px;
+        height: 14px;
+    }
+    .company-name {
+        font-size: 16px;
+    }
+    .company-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .experience-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .duration {
+        font-size: 14px;
+    }
+    .type-badge {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+    .responsibility-item {
+        font-size: 13px;
+        line-height: 1.4;
+        margin-bottom: 12px;
+        padding-left: 20px;
+    }
+    .responsibility-item::before {
+        font-size: 14px;
+    }
+    .technologies-section h4 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    .tech-tag {
+        font-size: 11px;
+        padding: 4px 8px;
     }
     .services-container {
         grid-template-columns: 1fr;
