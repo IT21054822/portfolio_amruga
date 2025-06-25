@@ -48,7 +48,7 @@ const LoadingAnimation = ({ onComplete }) => {
 
     // Progress bar animation and percentage counter
     tl.to({}, {
-      duration: 3,
+      duration: 1.3,
       ease: "power2.inOut",
       onUpdate: function() {
         const progress = Math.round(this.progress() * 100);
@@ -78,7 +78,7 @@ const LoadingAnimation = ({ onComplete }) => {
       <div className="loading-page">
         <div className="name-container">
           <div className="logo-name" ref={logoNameRef}>
-            Rugash's<br/>Portfolio
+            Rugashan's<br/>Portfolio
           </div>
         </div>
         

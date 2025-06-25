@@ -8,6 +8,7 @@ import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
 import LoadingAnimation from './Components/LoadingAnimation';
 import { ThemeProvider } from './contexts/ThemeContext';
+import Articles from './Components/Articles/Articles';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,9 +23,9 @@ const App = () => {
       ) : (
         <div>
           <Navbar />
-          <Hero />
-          <About />
+          <Hero />          <About />
           <Services />
+          <Articles />
           <MyWork />
           <Contact />
           <Footer />
