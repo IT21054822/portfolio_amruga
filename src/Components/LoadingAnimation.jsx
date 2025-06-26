@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import './LoadingAnimation.css';
 import logo from '../assets/logo2.png';
+import { useTheme } from '../contexts/ThemeContext';
 
 const LoadingAnimation = ({ onComplete }) => {
   const logoNameRef = useRef(null);
@@ -9,6 +10,7 @@ const LoadingAnimation = ({ onComplete }) => {
   const progressContainerRef = useRef(null);
   const percentageRef = useRef(null);
   const loadingContainerRef = useRef(null);
+  const { currentTheme, themes } = useTheme();
   
   const [percentage, setPercentage] = useState(0);
 
@@ -73,9 +75,13 @@ const LoadingAnimation = ({ onComplete }) => {
     });
 
   }, [onComplete]);
+  
   return (
     <div className="loading-container" ref={loadingContainerRef}>
-      <div className="loading-page">
+      <div 
+        className="loading-page" 
+        style={{ background: themes[currentTheme]?.gradient || themes.default?.gradient }}
+      >
         <div className="name-container">
           <div className="logo-name" ref={logoNameRef}>
             Rugashan's<br/>Portfolio

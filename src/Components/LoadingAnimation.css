@@ -19,7 +19,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(to right, #346181, #020271);
+  /* background: linear-gradient(to right, #346181, #020271); */
   height: 100%;
   width: 100%;
   display: flex;

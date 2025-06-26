@@ -77,8 +77,8 @@ const Articles = () => {
             onClick={prevSlide}
             aria-label="Previous article"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18L9 12L15 6" stroke={"blue"} strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
 
@@ -120,7 +120,7 @@ const Articles = () => {
             aria-label="Next article"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M9 18L15 12L9 6" stroke={"blue"} strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
         </div>
