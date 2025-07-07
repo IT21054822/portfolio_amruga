@@ -29,12 +29,13 @@ const Navbar = () => {
               <li><AnchorLink className='anchor-link' offset={50} href='#about'><p onClick={()=>setMenu("about")}>About Me</p></AnchorLink> {menu==="about" ? <img src={underline} alt=' '/> : <></> }</li>
               <li><AnchorLink className='anchor-link' offset={50} href='#services'><p onClick={()=>setMenu("services")}>Experience</p></AnchorLink>{menu==="services" ? <img src={underline} alt=' '/> : <></> }</li>
               <li><AnchorLink className='anchor-link' offset={50} href='#mywork'><p onClick={()=>setMenu("portfolio")}>Portfolio</p></AnchorLink>{menu==="portfolio" ? <img src={underline} alt=' '/> : <></> }</li>
-              <li><AnchorLink className='anchor-link' offset={50} href='#contact'><p onClick={()=>setMenu("contact")}>Contact</p></AnchorLink>{menu==="contact" ? <img src={underline} alt=' '/> : <></> }</li>
+              {/* <li><AnchorLink className='anchor-link' offset={50} href='#contact'><p onClick={()=>setMenu("contact")}>Contact</p></AnchorLink>{menu==="contact" ? <img src={underline} alt=' '/> : <></> }</li> */}
+              <li><AnchorLink className='anchor-link' offset={50} href='#articles'><p onClick={()=>setMenu("articles")}>Articles</p></AnchorLink>{menu==="articles" ? <img src={underline} alt=' '/> : <></> }</li>
           </ul>
           <div className="navbar-right"> <div className="xyz"><ThemeSelector className='themeSelector theme-selector-inline' /></div>
             
             
-            <div className="nav-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>Contact Me </AnchorLink></div>
+            <div className="nav-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>Hire Me </AnchorLink></div>
           </div>
       </div>
       <div className="theme-selector-below">
