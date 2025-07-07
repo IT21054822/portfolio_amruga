@@ -269,7 +269,7 @@
     .about {
         margin: 50px 70px;
         gap: 80px;
-        align-items: start;
+        /* align-items: start; */
     }
     .about-title h1 {
         font-size: 50px;
@@ -379,7 +379,7 @@
     .about {
         margin: 30px 20px;
         gap: 50px;
-        align-items: start;
+        /* align-items: start; */
     }
     .about-title h1 {
         font-size: 40px;

@@ -58,7 +58,7 @@
 .contact-right{
     display: flex;
     flex-direction: column;
-    align-items: start;
+    /* align-items: start; */
     gap: 30px;
 }
 .contact-right label{
@@ -143,7 +143,7 @@
     .contact {
         gap: 50px;
         margin: 50px 70px;
-        align-items: start;
+        /* align-items: start; */
     }
     .contact-title h1 {
         font-size: 50px;
@@ -192,7 +192,7 @@
     .contact {
         gap: 30px;
         margin: 30px 20px;
-        align-items: start;
+        /* align-items: start; */
     }
     .contact-title h1 {
         font-size: 40px;

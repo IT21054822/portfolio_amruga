@@ -293,7 +293,7 @@
 /* For screens between 768px and 551px */
 @media (max-width: 768px) and (min-width: 551px) {
     .services {
-        align-items: start;
+        /* align-items: start; */
         gap: 50px;
         margin: 20px 40px;
     }
@@ -339,7 +339,7 @@
 /* For screens 550px and below */
 @media (max-width: 550px) {
     .services {
-        align-items: start;
+        /* align-items: start; */
         gap: 30px;
         margin: 20px 20px;
     }
