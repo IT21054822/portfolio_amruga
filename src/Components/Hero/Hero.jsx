@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Hero.css'
 import profile_img from '../../assets/profile_imgg.png'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
@@ -11,12 +11,26 @@ import EmailIcon from '@mui/icons-material/Email';
 
 const Hero = () => {
   const [isDownloading, setIsDownloading] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [touchFeedback, setTouchFeedback] = useState({});
+  const [isImageHovered, setIsImageHovered] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 550);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleResumeClick = async () => {
     setIsDownloading(true);
     
     try {
-      // Simulate a slight delay to show the loader (you can remove this in production)
+      // Simulate a slight delay to show the loader
       await new Promise(resolve => setTimeout(resolve, 800));
       
       // Create a temporary anchor element
@@ -33,25 +47,77 @@ const Hero = () => {
     }
   };
 
+  const handleTouchStart = (elementId) => {
+    if (isMobile) {
+      setTouchFeedback(prev => ({ ...prev, [elementId]: true }));
+    }
+  };
+
+  const handleTouchEnd = (elementId) => {
+    if (isMobile) {
+      setTimeout(() => {
+        setTouchFeedback(prev => ({ ...prev, [elementId]: false }));
+      }, 150);
+    }
+  };
+
+  const handleImageMouseEnter = () => {
+    setIsImageHovered(true);
+  };
+
+  const handleImageMouseLeave = () => {
+    setIsImageHovered(false);
+  };
+
   return (
-    <div id='home' className='hero'>
+    <div 
+      id='home' 
+      className='hero'
+    >
         <div className="hero-image-container">
-          <img src={profile_img} alt="" />
+          <img 
+            src={profile_img} 
+            alt="Rugashan Jeevarajah" 
+            onMouseEnter={handleImageMouseEnter}
+            onMouseLeave={handleImageMouseLeave}
+          />
           {/* Social Media Links */}
           <div className="hero-social">
             <div className="social-container">
               <div className="social-icons-vertical">
-                <a href="https://linkedin.com/in/rugashanjeeva0818/" target="_blank" rel="noopener noreferrer" className="social-link linkedin" data-tooltip="LinkedIn">
+                <a 
+                  href="https://linkedin.com/in/rugashanjeeva0818/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={`social-link linkedin ${touchFeedback.linkedin ? 'touch-active' : ''}`}
+                  data-tooltip="LinkedIn"
+                  onTouchStart={() => handleTouchStart('linkedin')}
+                  onTouchEnd={() => handleTouchEnd('linkedin')}
+                >
                   <div className="social-bg"></div>
                   <LinkedInIcon className="social-icon" />
                   <span className="social-ripple"></span>
                 </a>
-                <a href="https://www.instagram.com/iam_ruga?igsh=MW9sYzg2aW9oa3c3MA==" target="_blank" rel="noopener noreferrer" className="social-link instagram" data-tooltip="Instagram">
+                <a 
+                  href="https://www.instagram.com/iam_ruga?igsh=MW9sYzg2aW9oa3c3MA==" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={`social-link instagram ${touchFeedback.instagram ? 'touch-active' : ''}`}
+                  data-tooltip="Instagram"
+                  onTouchStart={() => handleTouchStart('instagram')}
+                  onTouchEnd={() => handleTouchEnd('instagram')}
+                >
                   <div className="social-bg"></div>
                   <InstagramIcon className="social-icon" />
                   <span className="social-ripple"></span>
                 </a>
-                <a href="mailto:rugasha.jeeva@gmail.com" className="social-link gmail" data-tooltip="Email Me">
+                <a 
+                  href="mailto:rugasha.jeeva@gmail.com" 
+                  className={`social-link gmail ${touchFeedback.gmail ? 'touch-active' : ''}`}
+                  data-tooltip="Email Me"
+                  onTouchStart={() => handleTouchStart('gmail')}
+                  onTouchEnd={() => handleTouchEnd('gmail')}
+                >
                   <div className="social-bg"></div>
                   <EmailIcon className="social-icon" />
                   <span className="social-ripple"></span>
@@ -65,22 +131,38 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <h1><span>I'm Rugashan Jeevarajah, <br/> </span>  Associate Software Engineer</h1>
+        <h1>
+          <span>I'm Rugashan Jeevarajah, <br/> </span>
+          Associate Software Engineer
+        </h1>
         <p>I am an Associate Software Developer with a year of hands-on experience in building dynamic web applications.</p>
         
         
         <div className="hero-action">
-          <div className="hero-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>Connect with Me</AnchorLink></div>
-          <div className={`hero-resume ${isDownloading ? 'downloading' : ''}`} onClick={handleResumeClick}>
+          <div 
+            className={`hero-connect ${touchFeedback.connect ? 'touch-active' : ''}`}
+            onTouchStart={() => handleTouchStart('connect')}
+            onTouchEnd={() => handleTouchEnd('connect')}
+          >
+            <AnchorLink className='anchor-link' offset={50} href='#contact'>
+              Connect with Me
+            </AnchorLink>
+          </div>
+          <div 
+            className={`hero-resume ${isDownloading ? 'downloading' : ''} ${touchFeedback.resume ? 'touch-active' : ''}`} 
+            onClick={handleResumeClick}
+            onTouchStart={() => handleTouchStart('resume')}
+            onTouchEnd={() => handleTouchEnd('resume')}
+          >
             {isDownloading ? (
               <>
                 <CircularProgress size={20} sx={{ color: '#B415FF', marginRight: '8px' }} />
-                Downloading...
+                {isMobile ? 'Downloading...' : 'Downloading...'}
               </>
             ) : (
               <>
                 <PictureAsPdfOutlinedIcon sx={{marginTop:'2.3px'}}/> 
-                My Resume
+                {isMobile ? 'Resume' : 'My Resume'}
               </>
             )}
           </div>
