@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Hero.css'
 import profile_img from '../../assets/profile_imgg.png'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Resume from '../../assets/Rugashan_Jeevarajah_Resume.pdf'
 import PictureAsPdfOutlinedIcon from '@mui/icons-material/PictureAsPdfOutlined';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -67,6 +66,16 @@ const Hero = () => {
 
   const handleImageMouseLeave = () => {
     setIsImageHovered(false);
+  };
+
+  const handleConnectClick = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   };
 
   return (
@@ -143,10 +152,10 @@ const Hero = () => {
             className={`hero-connect ${touchFeedback.connect ? 'touch-active' : ''}`}
             onTouchStart={() => handleTouchStart('connect')}
             onTouchEnd={() => handleTouchEnd('connect')}
+            onClick={handleConnectClick}
+            style={{ cursor: 'pointer' }}
           >
-            <AnchorLink className='anchor-link' offset={50} href='#contact'>
-              Connect with Me
-            </AnchorLink>
+            Connect with Me
           </div>
           <div 
             className={`hero-resume ${isDownloading ? 'downloading' : ''} ${touchFeedback.resume ? 'touch-active' : ''}`} 
