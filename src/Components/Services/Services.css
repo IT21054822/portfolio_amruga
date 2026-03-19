@@ -44,6 +44,7 @@
 .experience-card {
     background: linear-gradient(135deg, rgba(63, 0, 40, 0.1), rgba(88, 35, 0, 0.1));
     border: 2px solid rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 30px;

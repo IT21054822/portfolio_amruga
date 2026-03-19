@@ -141,6 +141,7 @@ line-height: 40px;
     font-size: 16px;
     border: 2px solid transparent;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     cursor: pointer;
     display: flex;
@@ -312,6 +313,7 @@ line-height: 40px;
     border-radius: 20px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     overflow: hidden;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -540,6 +542,7 @@ line-height: 40px;
     .hero {
         padding: 20px;
         min-height: 100vh;
+        min-height: -webkit-fill-available;
         justify-content: center;
     }
 
@@ -605,6 +608,7 @@ line-height: 40px;
         padding: 20px;
         background: rgba(255, 255, 255, 0.05);
         border-radius: 25px;
+        -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.1);
     }
@@ -684,6 +688,7 @@ line-height: 40px;
     .hero {
         padding: 15px;
         min-height: 100vh;
+        min-height: -webkit-fill-available;
         justify-content: center;
         gap: 25px;
     }
@@ -757,6 +762,7 @@ line-height: 40px;
         padding: 15px 25px;
         background: rgba(255, 255, 255, 0.08);
         border-radius: 25px;
+        -webkit-backdrop-filter: blur(15px);
         backdrop-filter: blur(15px);
         border: 1px solid rgba(255, 255, 255, 0.15);
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);

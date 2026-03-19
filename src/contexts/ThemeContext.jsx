@@ -60,7 +60,9 @@ export const ThemeProvider = ({ children }) => {
 
   // Apply theme to body background
   useEffect(() => {
-    document.body.style.background = themes[currentTheme].gradient;
+    const gradient = themes[currentTheme].gradient;
+    document.body.style.background = gradient;
+    document.documentElement.style.background = gradient;
   }, [currentTheme]);
 
   const changeTheme = (themeKey) => {

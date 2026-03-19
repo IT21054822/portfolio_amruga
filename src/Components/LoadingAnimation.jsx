@@ -63,8 +63,9 @@ const LoadingAnimation = ({ onComplete }) => {
       },
       onComplete: () => {
         // Final animation - slide out the loading screen
+        const containerHeight = loadingContainerRef.current?.offsetHeight || window.innerHeight;
         gsap.to(loadingContainerRef.current, {
-          y: -window.innerHeight,
+          y: -containerHeight,
           duration: 1,
           ease: "power2.inOut",
           onComplete: () => {

@@ -44,6 +44,7 @@
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -87,6 +88,7 @@
     align-items: center;
     opacity: 0;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
 }
 
@@ -127,6 +129,7 @@
     font-family: 'Outfit', sans-serif;
     cursor: pointer;
     transition: all 0.3s ease;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     font-size: 14px;
     text-transform: uppercase;
@@ -187,6 +190,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 30px;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -264,6 +268,7 @@
     color: white;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;

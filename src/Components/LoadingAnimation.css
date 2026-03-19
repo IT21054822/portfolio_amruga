@@ -3,6 +3,7 @@
 .loading-container {
   font-family: "Michroma", sans-serif;
   height: 100vh;
+  height: -webkit-fill-available;
   width: 100%;
   background-color: black;
   color: #fff;
