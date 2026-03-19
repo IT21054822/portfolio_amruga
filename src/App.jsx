@@ -18,19 +18,16 @@ const App = () => {
   };
   return (
     <ThemeProvider>
-      {isLoading ? (
-        <LoadingAnimation onComplete={handleLoadingComplete} />
-      ) : (
-        <div>
-          <Navbar />
-          <Hero />          <About />
-          <Services />
-          <Articles />
-          <MyWork />
-          <Contact />
-          <Footer />
-        </div>
-      )}
+      {isLoading && <LoadingAnimation onComplete={handleLoadingComplete} />}
+      <div>
+        <Navbar />
+        <Hero />          <About />
+        <Services />
+        <Articles />
+        <MyWork />
+        <Contact />
+        <Footer />
+      </div>
     </ThemeProvider>
   );
 };
