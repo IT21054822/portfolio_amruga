@@ -142,7 +142,7 @@ const Hero = () => {
         </div>
         <h1>
           <span>I'm Rugashan Jeevarajah, <br/> </span>
-          Associate Software Engineer
+          Software Engineer
         </h1>
         <p>I am an Associate Software Developer with a year of hands-on experience in building dynamic web applications.</p>
         
